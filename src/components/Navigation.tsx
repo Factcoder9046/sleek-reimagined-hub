@@ -169,7 +169,7 @@ const Navigation = () => {
                 {/* Mega Menu Dropdown */}
                 {showProductsMenu && (
                   <div 
-                    className="absolute left-0 right-0 top-full bg-background/98 backdrop-blur-md border-t border-border shadow-2xl animate-fade-in z-50 w-screen -ml-[50vw] left-[50%]"
+                    className="absolute top-full bg-background/98 backdrop-blur-md border-t border-border shadow-2xl animate-fade-in z-50 w-screen left-1/2 -translate-x-1/2"
                     onMouseEnter={() => setShowProductsMenu(true)}
                     onMouseLeave={() => {
                       setShowProductsMenu(false);
