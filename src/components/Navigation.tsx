@@ -101,11 +101,10 @@ const Navigation = () => {
       {/* Main Navigation */}
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed left-0 right-0 z-50 transition-all duration-300",
           isScrolled
-            ? "bg-background/95 backdrop-blur-md shadow-custom-md py-2"
-            : "bg-transparent py-4",
-          "md:top-[44px]" // Account for contact bar on desktop only
+            ? "top-0 bg-background/95 backdrop-blur-md shadow-custom-md py-2"
+            : "top-0 md:top-[44px] bg-transparent py-4"
         )}
       >
         <div className="container mx-auto px-4">
@@ -149,10 +148,7 @@ const Navigation = () => {
               <div 
                 className="relative"
                 onMouseEnter={() => setShowProductsMenu(true)}
-                onMouseLeave={() => {
-                  setShowProductsMenu(false);
-                  setHoveredCategory(null);
-                }}
+                onMouseLeave={() => setShowProductsMenu(false)}
               >
                 <button
                   className={cn(
@@ -172,7 +168,14 @@ const Navigation = () => {
 
                 {/* Mega Menu Dropdown */}
                 {showProductsMenu && (
-                  <div className="fixed left-0 right-0 top-full mt-0 bg-background/98 backdrop-blur-md border-t border-border shadow-2xl animate-fade-in z-50">
+                  <div 
+                    className="fixed left-0 right-0 top-full bg-background/98 backdrop-blur-md border-t border-border shadow-2xl animate-fade-in z-50"
+                    onMouseEnter={() => setShowProductsMenu(true)}
+                    onMouseLeave={() => {
+                      setShowProductsMenu(false);
+                      setHoveredCategory(null);
+                    }}
+                  >
                     <div className="container mx-auto px-4 py-8">
                       <div className="grid grid-cols-12 gap-8">
                         {/* Left Column - Categories */}
@@ -304,7 +307,7 @@ const Navigation = () => {
                 )}
               </div>
 
-              <Button asChild variant="default" className="bg-gradient-accent hover:shadow-accent">
+              <Button asChild variant="default" className="bg-gradient-accent text-white hover:shadow-accent">
                 <Link to="/contact">Get Quote</Link>
               </Button>
             </div>
@@ -357,7 +360,7 @@ const Navigation = () => {
                   })}
                 </div>
 
-                <Button asChild variant="default" className="bg-gradient-accent w-full mt-4">
+                <Button asChild variant="default" className="bg-gradient-accent text-white w-full mt-4">
                   <Link to="/contact">Get Quote</Link>
                 </Button>
               </div>
