@@ -63,7 +63,7 @@ const ProductsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-[100px] md:pt-[144px]">
+    <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
