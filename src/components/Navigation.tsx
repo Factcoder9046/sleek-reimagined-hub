@@ -169,7 +169,8 @@ const Navigation = () => {
                 {/* Mega Menu Dropdown */}
                 {showProductsMenu && (
                   <div 
-                    className="absolute top-full bg-background/98 backdrop-blur-md border-t border-border shadow-2xl animate-fade-in z-50 w-screen left-1/2 -translate-x-1/2"
+                    className="fixed left-0 right-0 bg-background/98 backdrop-blur-md border-t border-border shadow-2xl animate-fade-in z-50"
+                    style={{ top: isScrolled ? '60px' : '104px' }}
                     onMouseEnter={() => setShowProductsMenu(true)}
                     onMouseLeave={() => {
                       setShowProductsMenu(false);
