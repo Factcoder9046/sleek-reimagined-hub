@@ -147,10 +147,13 @@ const Navigation = () => {
               {/* Products Mega Menu */}
               <div 
                 className="relative"
-                onMouseEnter={() => setShowProductsMenu(true)}
-                onMouseLeave={() => setShowProductsMenu(false)}
+                onMouseLeave={() => {
+                  setShowProductsMenu(false);
+                  setHoveredCategory(null);
+                }}
               >
                 <button
+                  onMouseEnter={() => setShowProductsMenu(true)}
                   className={cn(
                     "flex items-center gap-1 transition-colors duration-300 relative group outline-none",
                     isScrolled 
@@ -172,10 +175,6 @@ const Navigation = () => {
                     className="fixed left-0 right-0 bg-background/98 backdrop-blur-md border-t border-border shadow-2xl animate-fade-in z-50"
                     style={{ top: isScrolled ? '60px' : '104px' }}
                     onMouseEnter={() => setShowProductsMenu(true)}
-                    onMouseLeave={() => {
-                      setShowProductsMenu(false);
-                      setHoveredCategory(null);
-                    }}
                   >
                     <div className="container mx-auto px-4 py-8">
                       <div className="grid grid-cols-12 gap-8">
